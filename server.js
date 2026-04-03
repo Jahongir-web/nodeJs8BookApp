@@ -15,6 +15,7 @@ import commentRouter from './src/router/commentRouter.js'
 
 const app = express();
 const PORT = process.env.PORT || 4000;
+const MONGODB_URL = process.env.MONGODB_URL;
 
 // static folder
 app.use(express.static(path.join("src", "files")))
@@ -35,7 +36,7 @@ app.use('/', commentRouter);
 
 const start = async () => {
     try {
-        await mongoose.connect("mongodb+srv://jahongir:5008749a@cluster0.twevw.mongodb.net/")
+        await mongoose.connect(MONGODB_URL)
 
         app.listen(PORT, () => console.log(`Server running on port: ${PORT}`))
     } catch (error) {
