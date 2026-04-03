@@ -35,7 +35,7 @@ app.use('/', commentRouter);
 
 const start = async () => {
     try {
-        await mongoose.connect("mongodb://localhost:27017/BookApp8")
+        await mongoose.connect("mongodb+srv://jahongir:5008749a@cluster0.twevw.mongodb.net/")
 
         app.listen(PORT, () => console.log(`Server running on port: ${PORT}`))
     } catch (error) {
